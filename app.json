@@ -1,0 +1,56 @@
+{
+  "pages": [
+    "pages/welcome/welcome",
+    "pages/msg/msg",
+    "pages/video/video",
+    "pages/music/music",
+    "pages/video/video-detail/video-detail",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/hotTop/hotTop"
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#503291",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "navigationBarBackgroundColor": "#fff",
+    "color": "#515151",
+    "selectedColor": "#8cbb19",
+    "backgroundColor": "#eeeeee",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/music/music",
+        "text": "音乐",
+        "iconPath": "images/yinle-2.png",
+        "selectedIconPath": "images/yinle.png"
+      },
+      {
+        "pagePath": "pages/video/video",
+        "text": "视频",
+        "iconPath": "images/video-2.png",
+        "selectedIconPath": "images/video.png"
+      },
+      {
+        "pagePath": "pages/welcome/welcome",
+        "text": "新闻",
+        "iconPath": "images/yinle-2.png",
+        "selectedIconPath": "images/yinle.png"
+      },
+      {
+        "pagePath": "pages/hotTop/hotTop",
+        "text": "热播",
+        "iconPath": "images/yinle-2.png",
+        "selectedIconPath": "images/yinle.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000
+  },
+  "debug": true
+}

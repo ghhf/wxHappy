@@ -1,0 +1,12 @@
+ <template name="banner">
+  <swiper class="swiper-box" indicator-dots="{{banner.indicatorDots}}" autoplay="{{banner.autoplay}}" interval="{{banner.interval}}" duration="{{banner.duration}}" circular="{{banner.circular}}">
+    <block wx:for="{{banners}}" wx:key="banner">
+    <navigator url="{{openpath}}" hover-class="none" open-type="navigate">
+      <swiper-item>
+        <image src="{{banners.imgUrl}}" class="slide-image banner-img" mode='scaleToFill'/>
+      </swiper-item>
+      </navigator>
+    </block>
+  </swiper>
+ </template>
+ 

@@ -1,0 +1,23 @@
+<!--pages/welcome/welcome.wxml-->
+<view class='welcome-container' >
+
+
+
+ <image class='welcome-logo' mode='aspectFit' src='../../images/logo.png'/>
+
+ <view wx:if='{{isBind}}' class='welcome-content' background-image='../../images/main_bg.png'>
+  <view class='white-txt'>欢迎使用</view>
+  <view class='orange-txt'>默克荣誉学院培训平台</view>
+  <view class='welcome-input'>
+  <input placeholder='请输入您的邮箱，绑定账号' placeholder-style='input-placeholder'/>
+  </view>
+ </view>
+
+ <view wx:else class='welcome-orange-txt'>
+  
+ </view>
+
+ <view class='white-line'>
+ </view>
+</view>
+

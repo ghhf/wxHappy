@@ -1,0 +1,97 @@
+<!--pages/video/video.wxml
+https://www.cnblogs.com/icyhoo/p/6282574.html-->
+
+<import src="../common/banner/banner.wxml"/>
+<import src="../common/videolist/videolist.wxml"/>
+
+<!--顶部分类 -->
+<view class="top-tab flex-tab " >
+  <view class="toptab flex-item {{currentNavtab == idx ? 'active' : ''}}" wx:for="{{navTab}}" wx:for-index="idx" wx:for-item="topTabName"  wx:key="key" data-idx="{{idx}}" bindtap="switchTab" >{{topTabName}}
+  </view>
+</view>
+
+<view class='container withtab'>
+  <!--子页面 每日推荐-->
+ <view class="page" hidden = "{{currentNavtab==0 ? false : true}}">
+
+  <!--轮播图-->
+  <swiper class="swiper-box" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
+    <block wx:for="{{banners}}" wx:key="{{list}}">
+    <navigator url="{{item.openpath}}" hover-class="none" open-type="navigate">
+      <swiper-item flex-flow="column">
+        <image src="{{item.imgUrl}}" class="banner-img" mode='scaleToFill'/>
+        <view width="100%">{{item.title}}</view>
+      </swiper-item>
+      </navigator>
+    </block>
+  </swiper>
+
+  <scroll-view
+   scroll-x = "true" 
+   upper-threshold = "upper" 
+   lower-threshold = "lower">
+    <view class='today-video-list'>
+     <view class='today-video-list-item'>
+     <image class='today-video-list-img' src='../../images/head.jpg'></image>
+     <text class='today-video-list-txt'>横向测试</text>
+     </view>
+    </view>
+    
+     <view class='today-video-list-item'>
+     <image class='today-video-list-img' src='../../images/head.jpg'></image>
+     <text class='today-video-list-txt'>横向测试</text>
+    </view>
+
+     <view class='today-video-list-item'>
+     <image class='today-video-list-img' src='../../images/head.jpg'></image>
+     <text class='today-video-list-txt'>横向测试</text>
+    </view>
+  </scroll-view>
+
+  <!-- 视频横向列表 -->
+   <scroll-view 
+    scroll-x = "true" 
+    upper-threshold = "upper" 
+    lower-threshold = "lower">
+    <block wx:for-items="{{videoList}}" wx:key="{{item.id}}">
+     <view class='today-video-list'>
+       <view class='today-video-list-item'>111111
+       </view>
+     </view>
+    </block>
+   </scroll-view>
+
+ </view>
+
+ <!--子页面 分类推荐-->
+ <view class="page" hidden='{{currentNavtab==1 ? false : true}}'>
+  <text>分类推荐</text>
+ </view>
+</view>
+
+
+<view class='video_type'>
+ <text class='video-type-name'>{{videoTypeName}}</text>
+</view>
+
+<!--分类 选项 -->
+<view class="video-box">
+    <!--列表  -->
+    <view class="video-list">
+      <!-- 循环 -->
+      <view class="video-item" wx:for="{{videos}}" wx:key="img">
+        <navigator url="{{item.openpath}}" hover-class="none" open-type="navigate">
+          <view>
+            <image src="{{item.img}}" class="video-item-img" />
+          </view>
+          <view class='video-name-txt'>
+            {{item.videoTitle}}
+          </view>
+           <view class='video-desc-txt'>
+            {{item.vidoeDesc}}
+          </view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+

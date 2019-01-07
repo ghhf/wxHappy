@@ -1,0 +1,10 @@
+.videolist-container{
+  display: flex;
+}
+
+.videolist-typename{
+  text-align: center;
+  font-size: 16rpx;
+  font-style: bold;
+
+}

@@ -1,0 +1,19 @@
+<!--pages/msg/msg.wxml
+数据绑定
+列表渲染
+条件渲染
+hidden 初始化渲染消耗高
+if else  后期渲染消耗高
+-->
+<view class='container-msg'>
+ <block wx:for="{{msgLists}}" wx:for-item="item" wx:key="key" wx:for-index="idx" data-id="{{item.id}}">
+  <view class='msgs-item' bindtap="bindItemTap">
+   <image class='msgs-img' mode = "aspectFill" src="{{item.img}}"/>
+   <view class='msg-desc-container'>
+    <view class='msg-title'>{{item.title}}</view>
+    <view class='msg-ptime'>{{item.time}}</view>
+     <view class='msg-category'>{{item.category}}</view>
+  </view>
+  </view>
+ </block>
+</view>
