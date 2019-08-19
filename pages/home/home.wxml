@@ -1,0 +1,42 @@
+<!--pages/home/home.wxml-->
+<view class="flex-cloumn">
+  <!-- 轮播-->
+  <swiper class='swiper' indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" next-margin="135rpx" current-item-id="{{currentItemId}}" previous-margin="135rpx" circular='true'>
+
+    <block wx:for="{{imgUrls}}" wx:key="imgswiper">
+      <swiper-item item-id="{{index}}" data-item-id="{{index}}" class='margin-t20 margin-b20'>
+        <image src='{{item}}' class='swiper-img fillet' mode='scallToFill' bindtap="tapHomeSwiper" data-id='{{index}}'></image>
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <text class="font36 margin20">精选专辑</text>
+  <!-- tab轮播-->
+  <swiper >
+    <view wx:for="{{tabs}}" wx:key="tabs" wx:for-item='item' wx:for-index='index'>
+      <swiper-item class='tab-swiper'>
+        <view wx:for="{{item}}" wx:key="subTabs" wx:for-item='item' wx:for-index='index'>
+          <view class="flex-column" data-item='{{item}}' bindtap="tapTabItem">
+          <image src="{{item.icon}}" class="tab-icon"></image>
+          <text class="font28">{{item.name}}</text>
+          </view>
+        </view>
+      </swiper-item>
+    </view>
+
+  </swiper>
+
+
+  <!-- 数据列表-->
+  <text class="font36 margin20">新品推荐</text>
+  <view class='grid'>
+    <block wx:for="{{lists}}" wx:key="lists" wx:for-item='item' wx:for-index='index'>
+      <view class='grid-item'>
+        <image src='{{item.img}}' mode='widthFix' class='fillet' data-id='{{index}}' bindtap='tapImg'></image>
+        <text class='c-333 font28 txt-limt1' data-id='{{item}}' bindtap='tapTxt'>{{item.title}}</text>
+        <text class='c-999 font20 txt-limt2'>{{item.desc}}</text>
+      </view>
+    </block>
+  </view>
+
+</view>

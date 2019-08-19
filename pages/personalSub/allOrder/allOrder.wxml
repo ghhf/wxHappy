@@ -1,0 +1,33 @@
+<!--pages/personalSub//allOrder/allOrder.wxml-->
+<!-- tab-->
+<view class='top-tab'>
+  <block wx:for='{{tabs}}' wx:for-index="index" wx:key='tabs'>
+    <view wx:if='{{item.isSel}}' class='tab-navigation-bar padding-l20 padding-r20  padding-b20 font34 selcted' data-id='{{index}}' bindtap='tapTab'>
+    <text class='selected'>{{item.text}}</text>
+    </view>
+     <view wx:else class='tab-navigation-bar padding-l20 padding-r20  padding-b20 font34' data-id='{{index}}' bindtap='tapTab'>
+    <text>{{item.text}}</text>
+    </view>
+  </block>
+</view>
+
+
+  <view hidden='{{curNav != 0}}'>
+  hahaha 测试第一个view
+  </view>
+
+   <view hidden='{{curNav != 1}}'>
+  hahaha 测试第二个view
+  </view>
+
+   <view hidden='{{curNav != 2}}'>
+  hahaha 测试第三个view
+  </view>
+
+   <view hidden='{{curNav != 3}}'>
+  hahaha 测试第四个view
+  </view>
+
+   <view hidden='{{curNav != 4}}'>
+  hahaha 测试第五个view
+  </view>

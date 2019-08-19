@@ -1,16 +1,38 @@
 //app.js
 
+var openId = wx.getStorageSync('openId')
+
 App({
+
   onLaunch: function () {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
 
+  
     // 登录
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        console.log("login code>>>>", res);
+        if(res.code){
+          //获取用户信息
+          // 发送code码到服务器，后台去拉取微信用户信息，并且可根据open_id确保用户的唯一
+        }else{
+          wx.showToast({
+            title: '登录失败，请重试',
+            icon: 'none'
+          })
+          console.log('登录获取code失败》》》》',res.errMsg)
+        }
+      },
+      fail: res => {
+        wx.showToast({
+          title: '登录失败，请重试',
+          icon:'none'
+        })
+        console.log('获取用户信息失败')
       }
     })
     // 获取用户信息
@@ -20,6 +42,8 @@ App({
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
           wx.getUserInfo({
             success: res => {
+
+              console.log("login res>>>>", res);
               // 可以将 res 发送给后台解码出 unionId
               this.globalData.userInfo = res.userInfo
 
@@ -35,6 +59,8 @@ App({
     })
   },
   globalData: {
+    hasLogin: false,
+    openid: null,
     userInfo: null
   }
 })

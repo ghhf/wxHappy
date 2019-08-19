@@ -1,0 +1,4 @@
+/* pages/classify/classify.wxss */
+page{
+  background-color: #fff;
+}

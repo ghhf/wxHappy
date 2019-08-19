@@ -1,56 +1,56 @@
 {
   "pages": [
-    "pages/welcome/welcome",
-    "pages/msg/msg",
-    "pages/video/video",
-    "pages/music/music",
-    "pages/video/video-detail/video-detail",
+    "pages/home/home",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/hotTop/hotTop"
-    
+    "pages/personal/personal",
+    "pages/classify/classify",
+    "pages/test/silderTab/silderTab",
+    "pages/test/welcome/welcome",
+    "pages/personalSub/allOrder/allOrder",
+    "pages/shopcart/shopcart",
+    "pages/proDetail/proDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#503291",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
+    "navigationBarTitleText": "微商城",
+    "navigationBarTextStyle": "white"
   },
   "tabBar": {
-    "navigationBarBackgroundColor": "#fff",
-    "color": "#515151",
-    "selectedColor": "#8cbb19",
-    "backgroundColor": "#eeeeee",
-    "borderStyle": "white",
+    "selectedColor": "#503291",
+    "color": "#bfbfbf",
+    "backgroundColor": "white",
     "list": [
       {
-        "pagePath": "pages/music/music",
-        "text": "音乐",
-        "iconPath": "images/yinle-2.png",
-        "selectedIconPath": "images/yinle.png"
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "images/tab/home_gray.png",
+        "selectedIconPath": "images/tab/home.png"
       },
       {
-        "pagePath": "pages/video/video",
-        "text": "视频",
-        "iconPath": "images/video-2.png",
-        "selectedIconPath": "images/video.png"
+        "pagePath": "pages/index/index",
+        "text": "商品分类",
+        "iconPath": "images/tab/category_gary.png",
+        "selectedIconPath": "images/tab/category.png"
       },
       {
-        "pagePath": "pages/welcome/welcome",
-        "text": "新闻",
-        "iconPath": "images/yinle-2.png",
-        "selectedIconPath": "images/yinle.png"
+        "pagePath": "pages/shopcart/shopcart",
+        "text": "购物车",
+        "iconPath": "images/tab/shop_cart_gray.png",
+        "selectedIconPath": "images/tab/shop_cart.png"
       },
       {
-        "pagePath": "pages/hotTop/hotTop",
-        "text": "热播",
-        "iconPath": "images/yinle-2.png",
-        "selectedIconPath": "images/yinle.png"
+        "pagePath": "pages/personal/personal",
+        "text": "我",
+        "iconPath": "images/tab/personal_gray.png",
+        "selectedIconPath": "images/tab/personal.png"
       }
     ]
   },
   "networkTimeout": {
     "request": 10000
   },
-  "debug": true
+  "debug": true,
+  "sitemapLocation": "sitemap.json"
 }

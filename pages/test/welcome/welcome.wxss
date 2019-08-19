@@ -1,0 +1,47 @@
+/* pages/welcome/welcome.wxss */
+
+page {
+  /* 整个页面的通用属性 *//* background: #ffc832; */
+}
+
+.swiper {
+  height: 550rpx;
+}
+
+.swiper-img {
+  margin: 20rpx;
+  /* box-shadow: 1rpx, 40rpx, 1rpx, 1rpx, #7c7; */
+}
+
+.swiper-img {
+  width: 440rpx;
+  height: 900rpx;
+}
+
+.grid {
+  display: flex;
+  flex-direction: row;
+  /** 允许换行 */
+  flex-wrap: wrap;
+}
+/** paddign margin 都要算在内 才算一个的宽度 所以这里不能仅仅放置一个item的宽度，要根据个数计算比例。
+个数 num  则宽度：100/num/100 = (width + padding*2 + margin*2)/(750) 
+宽度比例：width/750 **/
+.grid-item {
+  width: 187rpx;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  /* border-radius: 10rpx; */
+  padding: 20rpx;
+  margin: 10rpx;
+}
+
+.grid image {
+  width: 100%;
+}
+
+.txt{
+  /**内容过多时 自动折行 **/
+   word-break: break-all;
+}

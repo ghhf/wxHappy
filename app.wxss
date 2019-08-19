@@ -1,104 +1,215 @@
 /**app.wxss**/
+page{
+   background-color: #eeeeee;
+   font-family: Sans-serif;
+}
 .container {
-  height: 100%;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: top;
   justify-content: space-between;
-  box-sizing: border-box;
-} 
-.withtab{
-  margin: 106rpx 0 0 0;
-  /*top: 105rpx;*/
 }
 
-.container .feed-item{
-  width: 690rpx;
-  padding: 30rpx 30rpx 20rpx;
-  margin: 7rpx 0 6rpx 0;
-  background: #ffffff;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
-  box-shadow: 0 2px 5px #eeeeee;
+.flex-column{
+  display: flex;
+  flex-direction: column;
 }
-.container .feed-item .feed-source{
-  width: 690rpx;
-  left: 0;
-  height: 50rpx;
+
+.flex-row{
+  display: flex;
+  flex-direction: row;
 }
-.container .feed-item .feed-source .avatar{
-  position: relative;
-  display: inline-block;
+
+.between{
+  justify-content: space-between
 }
-.container .feed-item .feed-source a{
-  display: inline-block;
-  height: 40rpx;
+
+.evenly{
+  justify-content: space-evenly
 }
-.container .feed-item .feed-source .avatar image{
-  /*position: absolute;*/
-  display: inline-block;
-  width: 45rpx;
-  height: 45rpx;
-  border-radius: 45rpx;
-  top: 10rpx;
-  vertical-align: middle;
+
+.white{
+  color: #ffffff;
 }
-.container .feed-item .feed-source text{
-  /*position: absolute;*/
-  display: inline-block;
-  height: 40rpx;
-  line-height: 40rpx;
-  vertical-align: middle;
-  margin: 0 0 0 15rpx;
-  color: #a0acac;
+
+.fillet{
+  border-radius: 10rpx;
+}
+
+
+.white-bg{
+  background-color: #ffffff;
+}
+
+.bottom-line{
+  border-bottom: 1rpx solid #eeeeee;
+}
+
+.top-line{
+ border-top: 1rpx solid #eeeeee;
+}
+
+.pad10{
+  padding: 10rpx;
+}
+
+.padding-l20{
+  padding-left: 20rpx;
+}
+
+.padding-r20{
+  padding-right: 20rpx;
+}
+
+.padding-t20{
+  padding-top: 20rpx;
+}
+
+.padding-b20{
+  padding-bottom: 20rpx;
+}
+
+.padding20{
+  padding: 20rpx;
+}
+
+.margin-l20{
+  margin-left: 20rpx;
+}
+
+.margin-r20{
+  margin-right: 20rpx;
+}
+
+.margin-b20{
+  margin-bottom: 20rpx;
+}
+
+.margin-t20{
+  margin-top: 20rpx;
+}
+
+.margin20{
+  margin: 20rpx;
+}
+
+.c-333{
+  color: #333333;
+}
+
+.bg-333{
+  background-color: #333333;
+}
+
+.c-999{
+  color: #999999;
+}
+
+.bg-999{
+  background-color: #999999;
+}
+
+.c-ffc832{
+  color: #ffc832;
+}
+
+.b-ffc832{
+  background-color: #ffc832;
+}
+
+.c-fa6e57{
+  color: #fa6e57;
+}
+
+.b-fa6e57{
+  background-color: #fa6e57;
+}
+
+.c-503291{
+  color: #503291;
+}
+
+.b-503291{
+  background-color: #503291;
+}
+
+.c-eee{
+  color: #eeeeee;
+}
+
+.b-eee{
+  background-color: #eeeeee;
+}
+
+.bg-bfbfbf{
+  background-color: #dadada;
+}
+
+.font20{
+  font-size: 20rpx;
+}
+
+.font22{
+  font-size: 22rpx;
+}
+
+.font24{
+  font-size: 24rpx;
+}
+
+.font26{
   font-size: 26rpx;
 }
-.container .feed-item .feed-source .item-more{
-  display: inline-block;
-  width: 40rpx;
-  height: 45rpx;
-  float: right;
-}
-.container .feed-item .feed-content{
-  padding: 10rpx 0 0 0;
-}
-.container .feed-item .feed-content .question text{
+
+.font28{
   font-size: 28rpx;
-  font-weight: 600px;
-  line-height: 40rpx;
-  text-space: 5rpx;
-}
-.container .feed-item .feed-content .answer-body{
-  padding: 10rpx 0 0 0;
-  /*height: 10rpx;*/
-  font-size: 24rpx;
-  line-height: 28rpx;
-  color: #5b5b5b;
-}
-.container .feed-item .feed-content .answer-actions{
-  width: 690rpx;
-  padding: 10rpx 0  0;
-  color: #a0acac;
-}
-.container .feed-item .feed-content .answer-actions view{
-  display: inline-block;
-  vertical-align: text-bottom;
-  padding: 0 10rpx 0 0;
-  font-size: 24rpx;
-}
-.container .feed-item .feed-content .answer-actions .dot ::after{
-  content: "•";
-}
-.common-bg{
-  background: #503291;
-  width: 100%;
-  height: 100%;
 }
 
-.container.round-white-bg{
-  background: white;
-  border-radius: 10rpx;
-  margin-left: 20rpx;
-  margin-right: 20rpx;
+.font30{
+  font-size: 30rpx;
+}
+
+.font34{
+  font-size: 34rpx;
+}
+
+.font36{
+  font-size: 36rpx;
+}
+
+.font38{
+  font-size: 38rpx;
+}
+
+.font44{
+  font-size: 44rpx;
+}
+
+.font54{
+  font-size: 54rpx;
+}
+.txt-c{
+ text-align: center
+}
+
+/** 限制2行文字，webkit-line-clamp 设置限制的行数**/
+.txt-limt2{
+ display: -webkit-box;
+ word-break: break-all;
+ /** 超出部分隐藏**/
+ text-overflow: ellipsis;
+ overflow: hidden;
+ -webkit-box-orient: vertical;
+ -webkit-line-clamp:2;
+}
+
+.txt-limt1{
+ display: -webkit-box;
+ word-break: break-all;
+ /** 超出部分隐藏**/
+ text-overflow: ellipsis;
+ overflow: hidden;
+ -webkit-box-orient: vertical;
+ -webkit-line-clamp:1;
 }
 

@@ -3,7 +3,7 @@
  * 公共免费接口：https://blog.csdn.net/c__chao/article/details/78573737
  */
 
-const host = 'https://api.apiopen.top'
+const host = 'https://merck.eyoungroup.cn'
 
 const config = {
   host,

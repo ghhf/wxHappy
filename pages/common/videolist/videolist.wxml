@@ -1,8 +1,0 @@
-
-<template name="videolist">
-  <view>
-    <view> test </view>
-    <view> test </view>
-  </view>
-</template>
-<template is = "videolist" data = "{{...item}}"></template>

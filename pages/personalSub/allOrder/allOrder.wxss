@@ -1,0 +1,22 @@
+/* pages/personalSub//allOrder/allOrder.wxss */
+
+.top-tab {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+}
+
+.tab-navigation-bar {
+  color: #333;
+  font-size: 28rpx;
+}
+
+.tab-navigation-bar .selected {
+  border-bottom: 8rpx solid #fa6e57;
+  padding-bottom: 10rpx;
+  color: #fa6e57;
+  font-size: 28rpx;
+
+}

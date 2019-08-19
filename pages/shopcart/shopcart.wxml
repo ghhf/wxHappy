@@ -1,0 +1,75 @@
+<!--pages/shopcart/shopcart.wxml-->
+<view class='container list-body'>
+
+  <view wx:for-items='{{list}}' wx:key='list' wx:for-item="item" wx:for-index="idx" bindtap='clickItem' data-id='{{idx}}'>
+    <!--店铺名称-->
+    <view class='flex-row white-bg padding-t20 padding-b20 mgn-b2'>
+      <!--点击事件不向上传递 所以这里不使用catchtap，，因为这里是外层循环不需要确定两个下标 所以不需要传递给父布局来处理-->
+      <image wx:if='{{item.isShopSel}}' src='../../images/shop/check-right.png' mode='aspectFit' class='sel-img' catchtap='tapSelShopImg' data-id='{{idx}}' />
+      <image wx:else src='../../images/shop/round.png' mode='aspectFit' class='sel-img' catchtap='tapSelShopImg' data-id='{{idx}}' />
+
+      <image src='../../images/common/shop_logo.png' mode='aspectFit' class='shop-logo' />
+      <text class='font28 c-333 margin-L10'>{{item.storeName}}</text>
+    </view>
+
+    <block wx:for-items='{{item.goods}}' wx:key='goods' wx:for-item="item" wx:for-index="index">
+      <scroll-view scroll-x scroll-into-view="{{toView}}">
+      <view id='scroll-before' class='flex-row white-bg w900'>
+        <!--点击事件不向上传递 所以这里不使用catchtap，，bindtap点击事件会向上传递，因为我们需要确定点击的是具体的商店的具体商品-->
+        <image wx:if='{{item.isSel}}' src='../../images/shop/check-right.png' mode='aspectFit' class='sel-img' bindtap='tapSelImg' data-id='{{index}}' />
+        <image wx:else src='../../images/shop/round.png ' mode='aspectFit' class='sel-img' bindtap='tapSelImg' data-id='{{index}}' />
+
+        <view class='item flex-row white-bg'>
+
+          <view class='item-body margin20'>
+            <image src='{{item.img}}' mode='aspectFit' />
+          </view>
+
+          <view class='flex-column margin-r20 margin-t20 margin-b20 item-content mgn-b2'>
+            <view class='flex-row '>
+              <text class='font30 c-333 cont-title'>{{item.title}}</text>
+              <image src='../../images/common/close.png' mode='scallToFill' class='shop-logo' bindtap='tapDrop' data-id='{{index}}' />
+            </view>
+
+            <view class='flex-row between margin-t20'>
+              <text class='font32 c-fa6e57'>¥{{item.price}}</text>
+              <view class='flex-row font30'>
+                <view wx:if='{{item.num<2}}' class='bound-f plus-cut margin-r20 c-999' bindtap='tapCut' data-id='{{index}}'>
+                  <text>-</text>
+                </view>
+                <view wx:else class='bound-3 plus-cut margin-r20 c-333' bindtap='tapCut' data-id='{{index}}'>
+                  <text>-</text>
+                </view>
+                <view class='bg-e plus-cut'>{{item.num}}</view>
+                <view class='bound-3 plus-cut c-333 margin-l20 c-333' bindtap='tapPlus' data-id='{{index}}'>
+                  <text>+</text>
+                </view>
+              </view>
+            </view>
+
+          </view>
+        </view>
+         <view class='scroll-del' bindtap='tapDrop' data-id='{{index}}'>删除</view>
+      </view>
+
+      </scroll-view>
+    </block>
+  </view>
+</view>
+
+<view class='fix-bottom white-bg'>
+  <view class='flex-row between'>
+    <view class='flex-row'>
+      <image wx:if='{{isAllSel}}' src='../../images/shop/check-right.png' mode='aspectFit' class='sel-img' catchtap='tapSelAllImg' />
+      <image wx:else src='../../images/shop/round.png' mode='aspectFit' class='sel-img' catchtap='tapSelAllImg' />
+      <text class='font28 txt-center pad10 c-333'>全选</text>
+      <text class='font30 txt-center black padding-l20'>合计:</text>
+      <text class='font34 txt-center c-fa6e57 bolder padding-r20'>¥{{money}}</text>
+    </view>
+    <view class='flex-row'>
+      <text class='c-999 font28 txt-center padding-l20 padding-r20'>不含运费</text>
+      <text class='b-fa6e57 white settlement'>结算</text>
+    </view>
+
+  </view>
+</view>

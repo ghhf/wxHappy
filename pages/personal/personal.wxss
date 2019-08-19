@@ -1,0 +1,63 @@
+/* pages/personal/personal.wxss */
+page{
+  background-color: #eeeeee
+}
+
+.head-bg {
+  margin: 10rpx;
+  width: 730rpx;
+  position: fixed;
+}
+
+.head {
+  margin-bottom: 40rpx;
+}
+
+.head-info {
+  z-index: 1;
+  display: fixed;
+}
+
+.avator {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 120rpx;
+  margin-left: 60rpx;
+  margin-top: 64rpx;
+}
+
+.head-txt {
+  margin-left: 20rpx;
+  margin-top: 74rpx;
+}
+
+.round-react {
+  background: #ffc832;
+  border-radius: 20rpx;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+  align-self: center;
+  margin-top: 20rpx;
+}
+
+.status-img{
+  width: 60rpx;
+}
+
+.item-center{
+  align-items: center;
+}
+
+.right-img{
+  width: 14rpx;
+  align-self: center;
+  margin: 6rpx;
+}
+
+.margin-t40{
+  margin-top: 60rpx;
+}
+
+.right-icon{
+  width: 20rpx;
+}

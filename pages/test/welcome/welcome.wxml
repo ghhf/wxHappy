@@ -1,0 +1,58 @@
+<!--pages/welcome/welcome.wxml-->
+
+<view class='container'>
+
+  <!--搜索框-->
+  <!-- <view class='flex-row bg-bfbfbf margin-t20 margin-r20 margin-l20 fillet padding20'>
+    <icon type='search' size='20'></icon>
+    <input value='123'>输入框</input>
+  </view> -->
+
+  <!--轮播图-->
+  <swiper class='swiper' indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" next-margin="130rpx" current-item-id="{{currentItemId}}" previous-margin="130rpx" circular='true'>
+
+    <block wx:for="{{imgUrls}}" wx:key="imgswiper">
+      <swiper-item item-id="{{index}}" data-item-id="{{index}}" class='swiper-img'>
+        <image src='{{item}}' class='swiper-img fillet' mode='scallToFill'></image>
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <!--轮播图 默认-->
+  <!-- <swiper autoplay='true' indicator-dots='true' indicator-active-color='#fa6e57' indicator-color='#dadada' circular='true'>
+    <block wx:for="{{imgUrls}}" wx:key="imgswiper">
+      <swiper-item bindtap='tapSwiperItem'  data-item='{{item}}'>
+        <image src='{{item}}' ></image>
+      </swiper-item>
+    </block>
+  </swiper> -->
+
+  <!--轮播图 图片视频混排-->
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-dots="{{indicatorDots}}" circular='true' class='swiper-hw' current-item-id="{{currentItemId}}" bindchange='swiperChange'>
+    <!--第一个固定为视频-->
+    <!-- <swiper-item wx:if='{{hasVideo}}'>
+      <video id='swiperVideo' class="swiper-video" src='{{info.itemVideoPath}}' autoplay='false' loop='true' />
+    </swiper-item> -->
+
+    <block wx:for="{{ivs}}" wx:key='img'>
+      <swiper-item>
+        <view class='swiper-img-center'>
+          <image src="{{item}}" class="swiper-img" mode='widthFix' />
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+
+   <!--轮播图 自定义-->
+   
+  <view class='grid margin-t20'>
+    <block wx:for="{{lists}}" wx:key="lists" wx:for-item='item' wx:for-index='index'>
+      <view class='grid-item'>
+        <image src='{{item.img}}' mode='widthFix' class='fillet' data-id='{{index}}' bindtap='tapImg'></image>
+        <text class='c-333 font32 txt' data-id='{{item}}' bindtap='tapTxt'>{{item.title}}</text>
+        <text class='c-999 font24'>{{item.desc}}</text>
+      </view>
+    </block>
+  </view>
+
+</view>

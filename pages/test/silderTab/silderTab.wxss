@@ -1,0 +1,14 @@
+/* pages/silderTab/silderTab.wxss */
+@import '../../../pages/personalSub/allOrder/allOrder';
+
+.scroll-tab{
+  width: 750rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly
+}
+
+.my-swiper{
+  height: 100%;
+  width: 100%;
+}

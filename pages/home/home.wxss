@@ -1,0 +1,69 @@
+/* pages/home/home.wxss */
+
+page {
+  background-color: white;
+}
+
+.swiper {
+  height: 500rpx;
+}
+
+.swiper-img {
+  width: 450rpx;
+  height: 460rpx;
+  box-shadow: 10rpx, 40rpx, 10rpx, #7c7;
+}
+
+.grid {
+  display: flex;
+  flex-direction: row;
+  /** 允许换行 */
+  flex-wrap: wrap;
+}
+
+/** paddign margin 都要算在内 才算一个的宽度 所以这里不能仅仅放置一个item的宽度，要根据个数计算比例。
+个数 num  则宽度：100/num/100 = (width + padding*2 + margin*2)/(750) 求解方程式得到width
+宽度比例：width/750 **/
+
+.grid-item {
+  width: 315rpx;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  /* border-radius: 10rpx; */
+  padding: 20rpx;
+  margin: 10rpx;
+}
+
+.grid image {
+  width: 100%;
+}
+
+.txt {
+  /**内容过多时 自动折行 允许在单词内换行**/
+  /* word-break: break-all; */
+  /* 只能在半角空格或连字符处换行。 */
+  /* word-break: keep-all; */
+  /* 默认的换行规则 */
+  /* word-break: normal */
+}
+
+.tab-swiper {
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  justify-content: space-evenly;  /* 均匀分布 */
+  text-align: center;
+}
+
+.tab-swiper-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.tab-icon{
+  width: 120rpx;
+  height: 120rpx;
+  margin: 20rpx;
+  border-radius: 50rpx;
+}

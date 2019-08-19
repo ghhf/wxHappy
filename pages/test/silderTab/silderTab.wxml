@@ -1,0 +1,27 @@
+<!--pages/silderTab/silderTab.wxml-->
+<view class='container'>
+  <scroll-view scroll-x class='scroll-tab' scroll-into-view='{{toView}}'>
+
+    <view class='top-tab'>
+      <block wx:for='{{tabs}}' wx:for-index="index" wx:key='tabs'>
+        <view id='selView' wx:if='{{item.isSel}}' class='tab-navigation-bar padding-l20 padding-r20 padding-b20 font34 selcted' data-id='{{index}}' bindtap='tapTab'>
+          <text class='selected'>{{item.text}}</text>
+        </view>
+        <view wx:else class='tab-navigation-bar padding-l20 padding-r20  padding-b20 font34' data-id='{{index}}' bindtap='tapTab'>
+          <text>{{item.text}}</text>
+        </view>
+      </block>
+    </view>
+
+  </scroll-view>
+
+
+  <swiper class='my-swiper' indicator-dots="false" autoplay="false">
+    <block wx:for="{{imgUrls}}" wx:key="imgswiper">
+      <swiper-item item-id="{{index}}" data-item-id="{{index}}" class='swiper-img'>
+        <image src='{{item}}' class='swiper-img fillet' mode='widthFix'></image>
+      </swiper-item>
+    </block>
+  </swiper>
+
+</view>

@@ -1,0 +1,39 @@
+<!--pages/personal/personal.wxml-->
+
+<!--头部用户信息-->
+<view class='flex-column head'>
+  <image src='../../images/personal/head_bg.png' mode='widthFix' class='head-bg' />
+  <view class='flex-row head-info'>
+    <image src='{{avator}}' mode='scallToFill' class='avator' />
+    <view class='felx-column head-txt'>
+      <text class='white bolder font30'>{{name}}</text>
+      <view wx:if='{{isMemeber}}' class='white font24 round-react'>领取会员卡</view>
+      <view wx:else class='c-333 font24 round-react'>V8 会员</view>
+    </view>
+  </view>
+</view>
+
+<view class='flex-row between padding20 white-bg margin-t40'>
+  <text class='font28 c-333'>全部订单</text>
+  <view class='flex-row'>
+    <text class='font26 c-999' bindtap='seeMyOrder'>查看我的订单</text>
+    <image src='../../images/common/right_arrow.png' mode='widthFix' class='right-img' />
+
+  </view>
+</view>
+
+<view class='flex-row evenly white-bg margin-t20 margin-b20 padding-t20 padding-b20'>
+  <block wx:for-items="{{orderStatus}}" wx:key="key" wx:for-index="idx" wx:for-item="item">
+    <view class='flex-column item-center' bindtap='tapOrderItem' data-id='{{idx}}'>
+      <image src='{{item.icon}}' mode='widthFix' class='status-img' />
+      <text class='font26 c-503291'>{{item.name}}</text>
+    </view>
+  </block>
+</view>
+
+<block wx:for-items="{{personalList}}" wx:key="key" wx:for-index="idx" wx:for-item="item">
+  <view class='flex-row between padding20 white-bg top-line' bindtap='tapListItem' data-id='{{idx}}'>
+    <text class='font28 c-333'>{{item.name}}</text>
+    <image src='{{item.rightIcon}}' mode='widthFix' class='right-icon'></image>
+  </view>
+</block>
